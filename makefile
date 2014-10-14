@@ -8,7 +8,7 @@ SOURCES = UKHASnet-decoder.c
 all: $(TARGET)
 	
 $(TARGET): $(SOURCES)
-	$(CC) -o $(TARGET) $(SOURCES)
+	$(CC) -std=gnu99 -o $(TARGET) $(SOURCES)
 
 clean:
 	-rm -f $(TARGET) 
