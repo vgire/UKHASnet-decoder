@@ -189,8 +189,8 @@ int main (int argc, char**argv){
       default:
         printf("Usage: UKHASnet-decoder [-s sample_rate][-v][-h] \n"
                 "Expects rtl_fm output:\n"
-                "\trtl_fm -f 433961890 -s 64k -g 0 -p 162 | ukhasnet-decoder -v -s 64000\n"
-                "\trtl_fm -f 433961890 -s 64k -g 0 -p 162 -r 8000 | ukhasnet-decoder -v -s 8000\n"
+                "\trtl_fm -f 433961890 -s 64k -g 0 -p 162 | ./UKHASnet-decoder -v -s 64000\n"
+                "\trtl_fm -f 433961890 -s 64k -g 0 -p 162 -r 8000 | ./UKHASnet-decoder -v -s 8000\n"
                 "\t[-s sample_rate in Hz. Above 4kHz and a multiple of 2kHz.]\n"
                 "\t[-v verbose mode]\n"
                 "\t[-h this help. Check the code if more needed !]\n\n");
