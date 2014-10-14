@@ -1,4 +1,4 @@
-Decode UKHASNet packets with a RTL SDR dongle
+Decode UKHASnet packets with a RTL SDR dongle
 ==================
 
 This is a simple UKHASnet decoder for RTL SDR dongles. Other similar decoder might already exist but this was a way for me to understand the protocol and get used to it.
