@@ -22,5 +22,5 @@ TODO (see code for details)
 - Synchronisation:
 	- Add tolerance bit option (and possibly use the preamble for more robustness)
 	- Support inverted bits
-- Confirm that RFM CRC computation is weird (has someone has experience with that ?)
+- Confirm that RFM CRC computation is weird (has someone had some experience with that ?)
 - Find better threshold formula to account for packet with no sufficient bit transitions
