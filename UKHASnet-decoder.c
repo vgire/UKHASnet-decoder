@@ -22,8 +22,7 @@
 // preamble is not used now (only for debugging)
 #define PREAMBLE 0xAAAA
 
-// 2 bytes sync words according to https://github.com/UKHASnet/UKHASnet_Firmware/blob/master/arduino_sensor/RFM69Config.h
-// But 5 bytes according to Layer 2 protocl (https://www.ukhas.net/wiki/protocol_details) (if so, simply use a uint64_t sync buffer)
+// 2 bytes sync words: https://www.ukhas.net/wiki/protocol_details
 // TODO: add sync tolerance (maybe with preamble to be more robust)
 #define SYNC_WORD 0x2DAA
 uint16_t syncBuffer;
@@ -72,7 +71,7 @@ uint16_t crc_xmodem_update (uint16_t crc, uint8_t data) {
   return crc;
 }
 
-// print to terminal with time tag
+// print time
 void printTime() {
   char buff[100];
   time_t now = time(0);
@@ -80,6 +79,7 @@ void printTime() {
   printf("%s ", buff);
 }
 
+// process one byte
 bool processByte(uint8_t byte) {
   if (len == -1) {
     // read length (does not account for length byte)
@@ -117,6 +117,7 @@ bool processByte(uint8_t byte) {
     // TODO
     // I don't know why I need to invert this CRC to work
     // bits could be all inverted but not just CRC...
+    // This seems to be the RFM which has a strange CRC implementation
     readCrc = 0xffff - readCrc;
     if (computedCrc == readCrc) {
       printTime();
@@ -137,6 +138,7 @@ bool processByte(uint8_t byte) {
 
 int skipBit = 8;
 
+// process one bit
 void processBit(bool bit) {
   if (packetSync) {
     // process bits by 8 (byte)

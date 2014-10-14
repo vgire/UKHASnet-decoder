@@ -20,8 +20,7 @@ Get started
 TODO (see code for details)
 -------
 - Synchronisation:
-	- Figure out if protocol uses a 2 or 5 bytes sync word
-	- Add tolerance bit option (and possibly use the preamble)
+	- Add tolerance bit option (and possibly use the preamble for more robustness)
 	- Support inverted bits
-- Figure out why CRC bytes must be inverted
+- Confirm that RFM CRC computation is weird (has someone has experience with that ?)
 - Find better threshold formula to account for packet with no sufficient bit transitions
