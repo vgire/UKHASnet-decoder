@@ -1,0 +1,13 @@
+# Binaries
+UKHASnet-decoder
+
+# Temp files
+*.swp
+*.swo
+
+# Build artefacts
+*.d
+*.o
+*.S
+*.so
+*.a
